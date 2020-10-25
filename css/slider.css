@@ -1,0 +1,208 @@
+/* Слайдер */
+.slick-slider{}
+/* Слайдер запущен */
+.slick-slider.slick-initialized{}
+/* Слайдер с точками */
+.slick-slider.slick-dotted{}
+/* Ограничивающая оболочка */
+.slick-list {
+	overflow: hidden;
+}
+/* Лента слайдов */
+.slick-track{
+	display: flex;
+}
+/* Слайд */
+.slick-slide{
+
+}
+/* Слайд активный (показывается) */
+.slick-slide.slick-active{}
+/* Слайд основной */
+.slick-slide.slick-current{}
+/* Слайд по центру */
+.slick-slide.slick-center{}
+/* Клонированный слайд */
+.slick-slide.slick-cloned{}
+/* Стрелка */
+.slick-arrow{}
+/* Стрелка влево */
+.slick-arrow.slick-prev{}
+/* Стрелка вправо */
+.slick-arrow.slick-next{}
+/* Стрелка не активная */
+.slick-arrow.slick-disabled{}
+/* Точки (булиты) */
+.slick-dots{}
+.slick-dots li{}
+/* Активная точка */
+.slick-dots li.slick-active{}
+/* Элемент точки */
+.slick-dots li button{}
+
+/*Конкретный слайдер*/
+
+.slider-title-block {
+
+}
+.slider {
+	position: relative;
+	max-width: 1440px;
+	margin: 0 40px;
+	padding: 0 50px;
+}
+@media (min-width: 1520px){
+	.slider {
+		margin: 0 auto;
+	}
+}
+.slider .slick-track{
+	margin-bottom: 30px;
+}
+.slider .slick-arrow{
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+	width: 30px;
+	height: 30px;
+	margin-top: -15px;
+	background: transparent;
+	border-top: 3px solid #e9e9e9;
+	border-left: 3px solid #e9e9e9;
+	font-size: 0;
+}
+.slider .slick-arrow.slick-prev {
+	left: 0;
+	transform: rotate(-45deg);
+}
+.slider .slick-arrow.slick-next {
+	right: 0;
+	transform: rotate(135deg);
+}
+.slider .slider__item {}
+.slider .slider__item.slick-active {}
+.review {
+	margin: 5px auto;
+	padding: 28px;
+	width: 350px;
+	min-height: 303px;
+	border-radius: 10px;
+	box-shadow: 0 0 5px 1px #eee;
+	overflow: hidden;	
+}
+.leave-review-slide {
+	/*min-height: 270px;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+	background: #bee6f1;
+}
+.review-head {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+.leave-review-head {
+	margin-bottom: 20px;
+}
+.reviewer-name {
+	font-size: 150%;
+	font-weight: 800;
+	color: #3a3233;
+}
+.review-date {}
+
+.stars {
+	margin-bottom: 20px;
+}
+.star {
+	margin-right:5px;
+	background: transparent;
+	border-radius: 50%;
+	box-shadow: -5px 10px 10px #bee6f1;
+}
+.star:last-child {
+	margin-right: 0;
+}
+.star__img {
+	width: 20px;
+}
+/*================ enet stars =================================*/
+.rating-area {
+	overflow: hidden;
+	margin: -20px auto 0;
+
+}
+.rating-area:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label {
+	float: right;
+	width: 42px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 42px;
+	line-height: 32px;
+	color: #80cce2;
+	/*text-shadow: 1px 1px #bbb;*/
+}
+.rating-area:not(:checked) > label:before {
+	content: '★';
+}
+.rating-area > input:checked ~ label {
+	color: #3ea0cb;
+	/*text-shadow: 1px 1px #c60;*/
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+	color: #3ea0cb;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+	color: #3ea0cb;
+	/*text-shadow: 1px 1px goldenrod;*/
+}
+.rate-area > label:active {
+	position: relative;
+}
+/*================ end stars =================================*/
+.review-text {
+	line-height: 1.1;
+}
+.altstar__img {
+	width: 30px;
+	opacity: 0.4;
+}
+.altstar__img:hover {
+	opacity: 1;
+}
+#leave-review-btn {
+
+}
+
+/* Точки (булиты) */
+.slider .slick-dots{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.slider .slick-dots li{
+	list-style: none;
+	margin: 0 10px;
+}
+/* Элемент точки */
+.slider .slick-dots li button{
+	font-size: 0;
+	width: 30px;
+	height: 5px;
+	border-radius: 2.5px;
+}
+/* Активная точка */
+.slider .slick-dots li.slick-active button{
+	width: 35px;
+	background: #52bbd9;
+}

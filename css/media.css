@@ -1,0 +1,32 @@
+@media (max-width: 1400px) {
+	.innerhead {
+		margin: 0 auto;
+		max-width: 1270px;
+		padding: 0 20px;
+	}
+	.header {
+		margin-right: 0;
+	}
+}
+@media (max-width: 1200px) {
+	.header {
+	font-size: 12px;
+	}
+	.buy {
+		width: 25px;
+	}
+}
+@media (max-width: 1070px) {
+	.header {
+		font-size: 10px;
+	}
+	.menu li:first-child {
+		margin-left: 0;
+	}
+	.menu li:last-child {
+		margin-right: 0;
+	}
+	.buy {
+		width: 15px;
+	}
+}

@@ -1,0 +1,87 @@
+.best-donuts {
+/*margin-bottom: 200px;*/
+}
+.bd-bottom-plug {
+	height: 100px;
+}
+.block-title {
+	text-align: center;
+}
+.bd-title {
+	margin-bottom: 10%;
+}
+.blue {
+	color: #57bfdd;
+}
+
+.slogan-row {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.bottom-slogans {
+	margin-top: -10%;
+}
+.slogan-element {
+	position: relative;
+	max-width: 340px;
+}
+.slogan-element:before {
+	color: #f5fafd;
+	font-size: 800%;
+	font-weight: 900;
+	text-transform: uppercase;
+	position: absolute;
+	z-index: -1;
+	top: -60px;
+}
+.slogan-element:after {
+	content: url(../images/Strip.png);
+	position: absolute;
+}
+.slogan-top-left:before {
+	content: 'свежайшие';
+	left: -60%;
+}
+.slogan-top-right:before {
+	content: 'малокалорий';
+	left: -40%;
+}
+.slogan-bottom-left:before {
+	content: 'уникальные';
+	left: -60%;
+}
+.slogan-bottom-right:before {
+	content: 'натуральные';
+	left: -30%;
+}
+.slogan-top-left:after {
+	/*bottom: 0;*/
+	transform: translate(0, 50px);
+}
+.slogan-top-right:after {
+	transform: scale(-1, 1) translate(50px, 50px);
+}
+.slogan-bottom-left:after {
+	transform: scale(1, -1) translate(50px, 0px);
+}
+.slogan-bottom-right:after {
+	transform: scale(-1, -1) translate(100px, 0px);
+}
+.slogan-title {
+	/*max-width: 340px;*/
+	font-size: 220%;
+	font-weight: 800;
+	color: #3a3233;
+	line-height: 1.1;
+	margin-bottom: 15px;
+}
+.slogan-text {
+	font-size: 95%;
+	line-height: 1.2;
+}
+.central-donut {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}

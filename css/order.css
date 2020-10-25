@@ -1,0 +1,154 @@
+.fast-order {
+	margin-bottom: 100px;
+}
+.fast-order-head {}
+.fast-order-innerhead {
+	text-align: center;
+}
+.block-title {}
+.fast-title {
+	margin-bottom: 50px;
+}
+.fast-title-text {}
+.points-block {}
+.points-pic {
+	margin-right: 60px;
+}
+.points__img {}
+.points-info {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 100px 70px;
+}
+.point-item {
+	display: flex;
+	align-items: flex-end;
+}
+.point-number-block {
+	margin: 0 40px 0 20px;
+}
+.point-number {
+	color: #f5fafd;
+	font-size: 800%;
+	font-weight: 900;
+	text-transform: uppercase;
+	line-height: 0.8;
+}
+.point-text-block {
+	max-width:250px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: left;
+}
+.point-title {}
+.point-title-text {
+	font-size: 200%;
+	color: #3a3233;
+	font-weight: 800;
+}
+.point-subtitle {}
+.point-subtitle-text {
+	font-size: 95%;
+	line-height: 1.2;
+}
+/*================ body =================================*/
+.fast-order-body {
+	background: url("../images/blue_bg_strip.png") bottom center no-repeat ;
+	background-size: cover;
+	width: 100%;
+	padding: 100px 0;
+}
+.fast-order-innerbody {
+	display: flex;
+	justify-content: space-between;
+}
+.box-of-donuts-block {
+	margin-left: -50px;
+}
+.box-of-donuts__img {}
+.fast-form-block {}
+.fast-form-title {
+	margin-bottom: 30px;
+}
+.fast-form-title-text {
+	font-size: 280%;
+	color: #3a3233;
+	font-weight: 800;
+	line-height: 1.2;
+}
+.fast-form-subtitle {
+	margin-bottom: 50px;
+}
+.fast-form-subtitle-text {
+	font-size: 130%;
+	font-weight: 600;
+}
+.fast-form {
+
+}
+.fast-form-field {
+	background: #ebf6fa;
+	width: 220px;
+	height: 40px;
+	font-size: 110%;
+	color: inherit;
+	padding-left: 5px;
+}
+.fast-form-field:focus {
+	box-shadow: 0 0 5px 1px #92bbd9;
+}
+.name-field-block {
+	position: relative;
+	padding-left: 35px;
+	/*margin-bottom: 20px;*/
+}
+.name-field-block:before {
+	content: url("../images/man.png");
+	position: absolute;
+	bottom: 9px;
+	left: 0;
+}
+.name-field {}
+.phone-field-block {
+	position: relative;
+	padding-left: 35px;
+	/*margin-bottom: 20px;*/
+}
+.phone-field-block:before {
+	content: url("../images/Phone.png");
+	transform: scale(0.7);
+	position: absolute;
+	left: -5px;
+	bottom: 7px;
+}
+.phone-field {
+	letter-spacing: 1px;
+}
+.fast-line {
+	margin-bottom: 20px;
+	margin-top: 10px;
+	max-width: 280px;
+}
+.mb40 {
+	margin-bottom: 40px;
+}
+.fast-btn-block {
+	margin-bottom: 30px;
+}
+.fast-btn {
+	width: 280px;
+}
+.policy {
+	display: flex;
+}
+.policy-checkbox {
+margin-right: 10px;
+}
+.policy-text {
+	font-size: 85%;
+}
+.underlined {
+	border-bottom: 1px dotted #8e8e90;
+}

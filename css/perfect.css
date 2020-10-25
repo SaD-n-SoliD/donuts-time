@@ -1,0 +1,104 @@
+.your-perfect-donut {
+
+}
+#your-perfect-donut-anchor {
+	visibility: hidden;
+	position: relative;
+	bottom: 100px;
+}
+.perfect-title {
+	margin-bottom: 7%;
+}
+.perfect-body {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.perfect-donut-block {
+
+}
+.pefrect-donut__img { 
+	 
+}
+.customize-donut-block {
+	flex-shrink: 0;
+	position: relative;
+	height: 750px;
+	width: 600px;
+	box-shadow: 0 0 5px 1px #eee;
+	padding: 4%;
+	padding-top: 70px;
+}
+.like-block {
+	position: absolute;
+	top: -50px;
+	right: -50px;
+
+}
+.like__png {
+	
+}
+.fill-the-box {
+	color: #3a3233;
+	font-size: 135%;
+	font-weight: 800;
+	margin-bottom: 70px;
+}
+.custom-donut-form {}
+.custom-donut-element {
+	margin-bottom: 20px;
+}
+.part-name {
+	margin-bottom: 30px;
+}
+.part-choise {
+	border-radius: 1px;
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	color: #3a3233;
+	font-size: 120%;
+	font-weight: 600;
+}
+.part-item {
+
+}
+.part-price {
+
+}
+.perfect-line {
+	height: 2px;
+	width: 100%;
+	opacity: 0.7;
+	background: linear-gradient(90deg, #fefefe, #52bbd9 20% 80%, #fefefe);
+}
+.perfect-total {
+	display: flex;
+	/*justify-content: space-between;*/
+	margin: 70px 0;
+}
+.amount-perfect {
+	margin-bottom: 0;
+	margin-right: 70px;
+}
+.perfect-amount-var {}
+.perfect-count-var {
+	display: inline;
+	color: #575553;
+	font-size: 135%;
+	font-weight: 800;
+	margin: 0 15px;
+}
+.perfect-row-btn {
+	width: 100%;
+	justify-content: space-between;
+}
+.perfect-btn {
+	width: 230px;
+	height: 60px;
+}
+
+
+
+
+
