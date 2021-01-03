@@ -18,9 +18,6 @@ $donutCount = 0;
 <html lang="ru">
 
 <head>
-	<!-- 91% , before , ctrl + / - коммент строки, ctrl+shift+I - отладка опера -->
-	<!-- ctrl + shift + G - обернуть выд. участок в тег -->
-	<!-- Ctrl+Shift+C -color picker -->
 	<title>Donuts time</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -272,85 +269,86 @@ $donutCount = 0;
 							<form action="#" class="custom-donut-form" id="custom-donut-form">
 								<div class="custom-donut-element">
 									<p class="part-name">Начинка</p>
+									<?
+									function makeItem($s1, $spaceCount, $s2)
+									{
+										$leftSpaces = 5;
+										$digits = 3;
+										$space = '&nbsp;';
+										$str = '';
+										for ($i = 0; $i < $leftSpaces; $i++) {
+											$str .= $space;
+										}
+										$str .= $s1;
+										for ($i = 0; $i < $spaceCount; $i++) {
+											$str .= $space;
+										}
+										$str .= $s2;
+										echo $str;
+									}
+									?>
+
 									<select class="part-choise hide">
-										<option value="" class="part-choise-option hide">
-											&nbsp;&nbsp;&nbsp;&nbsp;
-											Шоколадно-кремовый тирамису
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-											+ 60 руб
+										<option data-price="60" value="60" class="part-choise-option">
+											<? makeItem('Шоколадно-кремовый тирамису', 18, '+ 60 руб') ?>
 										</option>
-										<option value="" class="part-choise-option">
-											&nbsp;&nbsp;&nbsp;&nbsp;
-											случайный текст
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-											+ 1 lorem
+										<option data-price="10" value="10" class="part-choise-option">
+											<? makeItem('случайный текст', 44, '+ 10 руб') ?>
 										</option>
 									</select>
 									<select name="n1" id="n1" class="part-choise show">
-										<option value="">Шоколадно-кремовый тирамису&nbsp;</option>
-										<option value="">случайный текст</option>
+										<option data-price="60" value="60">Шоколадно-кремовый тирамису&nbsp;</option>
+										<option data-price="10" value="10">случайный текст</option>
 									</select>
 									<div class="perfect-line"></div>
 								</div>
 								<div class="custom-donut-element">
 									<p class="part-name">Крем</p>
 									<select class="part-choise hide">
-										<option value="" class="part-choise-option">
-											&nbsp;&nbsp;&nbsp;&nbsp;
-											Шоколадно-ореховое пралине
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-											+ 40 руб
+										<option data-price="40" value="40" class="part-choise-option">
+											<? makeItem('Шоколадно-ореховое пралине', 21, '+ 40 руб') ?>
 										</option>
-										<option value="" class="part-choise-option">
-											&nbsp;&nbsp;&nbsp;&nbsp;
-											случайный текст
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-											+ 1 ipsum
+										<option data-price="11" value="11" class="part-choise-option">
+											<? makeItem('случайный текст', 44, '+ 11 руб') ?>
 										</option>
 									</select>
 									<select name="n2" id="n2" class="part-choise show">
-										<option value="">Шоколадно-ореховое пралине&nbsp;&nbsp;&nbsp;&nbsp;</option>
-										<option value="">случайный текст</option>
+										<option data-price="40" value="40">Шоколадно-ореховое пралине&nbsp;&nbsp;&nbsp;&nbsp;</option>
+										<option data-price="11" value="11">случайный текст</option>
 									</select>
 									<div class="perfect-line"></div>
 								</div>
 								<div class="custom-donut-element">
 									<p class="part-name">Присыпка</p>
 									<select class="part-choise hide">
-										<option value="" class="part-choise-option">
-											&nbsp;&nbsp;&nbsp;&nbsp;
-											Стружка бельгийского шоколада
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-											+ 15 руб
+										<option data-price="15" value="15" class="part-choise-option">
+											<? makeItem('Стружка бельгийского шоколада', 17, '+ 15 руб') ?>
 										</option>
-										<option value="" class="part-choise-option">
-											&nbsp;&nbsp;&nbsp;&nbsp;
-											текст
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-											+ 25 dolor
+										<option data-price="25" value="25" class="part-choise-option">
+											<? makeItem('текст', 63, '+ 25 руб') ?>
 										</option>
 									</select>
 									<select name="n3" id="n3" class="part-choise show">
-										<option value="">Стружка бельгийского шоколада</option>
-										<option value="">текст</option>
+										<option data-price="15" value="15">Стружка бельгийского шоколада</option>
+										<option data-price="25" value="25">текст</option>
 									</select>
 									<div class="perfect-line"></div>
 								</div>
 							</form>
 							<div class="perfect-total">
 								<p class="amount amount-perfect">Итого:<span class="blue"><span class="perfect-amount-var"> 0 </span>руб</span></p>
-								<div class="donut-count">
-									<form action="#" class="countform">
-										<button class="donut-count-button underdonut__button">
+								<div class="perfect-donut-count donut-count">
+									<div class="countform">
+										<button class="donut-count-button underdonut__button perfect-minus">
 											<span class="minus-paint"></span>
 										</button>
-									</form>
-									<p class="perfect-count-var">0</p>
-									<form action="#" class="countform">
-										<button class="donut-count-button underdonut__button">
+									</div>
+									<p class="perfect-count-var">1</p>
+									<div class="countform">
+										<button class="donut-count-button underdonut__button perfect-plus">
 											<span class="minus-paint"></span><span class="plus-paint"></span>
 										</button>
-									</form>
+									</div>
 								</div>
 							</div>
 							<div class="row-btn perfect-row-btn">
@@ -548,6 +546,7 @@ $donutCount = 0;
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script src="js/burger.js"></script>
 	<script src="js/box-calc.js"></script>
+	<script src="js/perfect.js"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="js/slider.js"></script>
 </body>
