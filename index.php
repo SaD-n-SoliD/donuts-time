@@ -1,15 +1,9 @@
 <?php
 
-$PDO_user = 'root';
-$PDO_pass = 'root';
-try {
-	$connection = new PDO('mysql:host=localhost; dbname=donuts-time; charset=utf8', $PDO_user, $PDO_pass);
-	$donutBlocks = $connection->query("SELECT * FROM donut_blocks");
-	$reviews = $connection->query("SELECT * FROM reviews");
-} catch (PDOException $e) {
-	echo 'Не удалось подключиться к БД:<br>' . $e->getMessage();
-	exit;
-}
+require_once 'connection.php';
+
+$donutBlocks = $pdo->query("SELECT * FROM donut_blocks");
+$reviews = $pdo->query("SELECT * FROM reviews");
 
 $donutCount = 0;
 
@@ -161,7 +155,7 @@ $donutCount = 0;
 										<span class="left-dot-word"><?= $block['first_component'] ?></span><?= $block['second_component'] ?>
 									</p>
 									<p class="box-underdonut__text"><?= $block['description'] ?></p>
-									<div class="box-price-count">
+									<div class="box-price-count <?= 'idd' . $block['id'] ?>">
 										<p class="donut-price"><?= $block['price'] . ' руб' ?></p>
 										<div class="donut-count">
 											<div class="countform">
@@ -200,7 +194,7 @@ $donutCount = 0;
 							<p class="your-choise">Вы&nbsp;выбрали:</p>
 							<div class="choose-list">
 								<?
-											$donutBlocks = $connection->query("SELECT * FROM donut_blocks");
+											$donutBlocks = $pdo->query("SELECT * FROM donut_blocks");
 										?>
 								<? foreach ($donutBlocks as $block) { ?>
 								<div class="chooselist-element">

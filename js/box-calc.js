@@ -33,10 +33,10 @@ function addBoxClickEvents(btnArr) {
 function activate(elem, btnArr) {
 
 	for (let btn of btnArr) {
-			btn.classList.remove('active');
-		}
+		btn.classList.remove('active');
+	}
 
-		elem.classList.add('active');
+	elem.classList.add('active');
 }
 
 let sweetPrev = allBtn;
@@ -50,7 +50,7 @@ function sweetClickEvent(elem, btnArr) {
 		sweetPrev.addEventListener('animationend', (e) => {
 			sweetPrev.classList.remove('previous');
 		});
-		
+
 		sweetPrev = elem;
 
 		for (let block of donutBlocks) {
@@ -120,7 +120,7 @@ function boxClickEvent(elem, btnArr) {
 		lightOrDark(plusButtons, fitsByTop(currentDonutsInBox + 1));
 
 	});
-}		
+}
 
 function addCounterEvents(btnArr) {
 	for (let btn of btnArr) {
@@ -129,16 +129,16 @@ function addCounterEvents(btnArr) {
 }
 
 function highlight(btnArr, condition = true) {
-	if (condition) {	
-		btnArr.forEach( (element) => {
+	if (condition) {
+		btnArr.forEach((element) => {
 			element.classList.remove('op50');
 		});
 	}
 }
 
 function darken(btnArr, condition = true) {
-	if (condition) {	
-		btnArr.forEach( (element) => {
+	if (condition) {
+		btnArr.forEach((element) => {
 			element.classList.add('op50');
 		});
 	}
@@ -170,45 +170,43 @@ function fitsByTop(num) {
 function plusOrMinus(btn, counter1, counter2) {
 
 	function inc(input) {
-			input.setAttribute('value', +input.getAttribute('value') + 1 +'');
-			//input.value = +input.value + 1 + '';
-		} 
+		input.setAttribute('value', +input.getAttribute('value') + 1 + '');
+		//input.value = +input.value + 1 + '';
+	}
 
 	function dec(input) {
-			input.setAttribute('value', +input.getAttribute('value') - 1 +'');
-			//input.value = +input.value - 1 + '';
-		}
-	
+		input.setAttribute('value', +input.getAttribute('value') - 1 + '');
+		//input.value = +input.value - 1 + '';
+	}
 
-	if (btn.classList.contains('plus-btn'))
-	{	
+
+	if (btn.classList.contains('plus-btn')) {
 		if (fitsByTop(currentDonutsInBox + 1)) {
 
-		++currentDonutsInBox;
-		inc(counter1);
-		inc(counter2);
+			++currentDonutsInBox;
+			inc(counter1);
+			inc(counter2);
 
-		const opposites = dbox.querySelectorAll('.minus-btn.'+getIdd(btn));
+			const opposites = dbox.querySelectorAll('.minus-btn.' + getIdd(btn));
 
-		highlight(opposites, fitsByBottom(+counter1.value - 1));
-		darken(plusButtons, !fitsByTop(currentDonutsInBox + 1)); 
-		return true
+			highlight(opposites, fitsByBottom(+counter1.value - 1));
+			darken(plusButtons, !fitsByTop(currentDonutsInBox + 1));
+			return true
 		}
-	} 
-	else
-	{
+	}
+	else {
 		if (fitsByBottom(+counter1.value - 1)) {
 
-		--currentDonutsInBox;
-		dec(counter1);
-		dec(counter2);
+			--currentDonutsInBox;
+			dec(counter1);
+			dec(counter2);
 
-		const couple = dbox.querySelectorAll('.minus-btn.'+getIdd(btn));
+			const couple = dbox.querySelectorAll('.minus-btn.' + getIdd(btn));
 
-		highlight(plusButtons, fitsByTop(currentDonutsInBox + 1));
-		darken(couple, !fitsByBottom(+counter1.value - 1));
-		return true
-		} 
+			highlight(plusButtons, fitsByTop(currentDonutsInBox + 1));
+			darken(couple, !fitsByBottom(+counter1.value - 1));
+			return true
+		}
 	}
 
 	return false
@@ -217,27 +215,39 @@ function plusOrMinus(btn, counter1, counter2) {
 const calcUrl = './box-calc.php';
 
 async function calculate(url) {
-		// e.preventDefault();
-		//console.log(boxForm);
-		let boxFormData = new Object();
-		htmlCounters.forEach((element, index) => {
-			boxFormData[element.getAttribute('name')] = element.getAttribute('value')
-		});
+	// e.preventDefault();
+	//console.log(boxForm);
+	let boxFormData = new Object();
+	htmlCounters.forEach((element, index) => {
+		boxFormData[element.getAttribute('name')] = element.getAttribute('value')
+	});
 
-		let response = await fetch(url, {
-			method: 'POST',
-			body: JSON.stringify(boxFormData) 
-		});
-		let num = await response.text();
-		if (response.ok) {
-			//console.log('Данные получены: ' + num);
-		}
-		else {
-			console.log('Ошибка: ' + response.status);
-		}
-		//console.log(num);
-		return num;
+	let response = await fetch(url, {
+		method: 'POST',
+		body: JSON.stringify(boxFormData)
+	});
+	let num = await response.text();
+	if (response.ok) {
+		//console.log('Данные получены: ' + num);
+	}
+	else {
+		console.log('Ошибка: ' + response.status);
+	}
+	//console.log(num);
+	return num;
 }
+
+// const pricesHtml = dbox.querySelectorAll('.donut-price');
+// let prices = {};
+// for (let i in pricesHtml) {
+// 	let с = pricesHtml[i];
+// 	let idd = /idd\d+/.exec(c.closest('.box-price-count').className)[0]
+// 	prices[idd] = +/\d+/.exec(с.innetText)[0];
+// }
+
+// function jsCalc() {
+
+// }
 
 
 function counterEvent(btn) {
@@ -250,9 +260,8 @@ function counterEvent(btn) {
 		const amount = document.getElementById('amount-var');
 		// plusOrMinus проверяет, можно ли нажать на кнопку, если да, то нажимает.
 		// возвращает результат проверки.
-		if ( plusOrMinus(btn, counter1, counter2) )
-		{
-		calculate(calcUrl).then(num => {amount.innerHTML = ` ${num} `});
+		if (plusOrMinus(btn, counter1, counter2)) {
+			calculate(calcUrl).then(num => { amount.innerHTML = ` ${num} ` });
 		}
 
 	});
