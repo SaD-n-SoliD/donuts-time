@@ -1,7 +1,7 @@
 <?php
 
 $PDO_user = 'root';
-$PDO_pass = 'root';
+$PDO_pass = '';
 $host = 'localhost';
 $dbname = 'donuts-time';
 try {

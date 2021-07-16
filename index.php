@@ -97,7 +97,7 @@ $donutCount = 0;
 			<div class="container">
 				<div class="best-donuts">
 					<div class="block-title bd-title">
-						<h2>Почему наши<br class="show" />донаты <span class="blue">лучшие</span></h2>
+						<h2>Почему наши<br class="show" /> донаты <span class="blue">лучшие</span></h2>
 					</div>
 					<div class="slogan-row">
 						<div class="slogan-element slogan-top-left">
@@ -143,36 +143,37 @@ $donutCount = 0;
 					<div class="box-body">
 						<!-- <div class="box-content"> -->
 						<div class="box-row-m">
-							<? foreach ($donutBlocks as $block) { $donutCount++; ?>
+							<? foreach ($donutBlocks as $block) {
+								$donutCount++; ?>
 
-							<div class="box-row-element active <?= $block['sweetness'] ?>">
-								<div class="box-dunut">
-									<img class="box-donut__img" src="<?= 'images/' . $block['donut_file_name'] ?>" alt="">
-								</div>
+								<div class="box-row-element active <?= $block['sweetness'] ?>">
+									<div class="box-dunut">
+										<img class="box-donut__img" src="<?= 'images/' . $block['donut_file_name'] ?>" alt="">
+									</div>
 
-								<div class="box-underdonut-m">
-									<p class="box-underdonut__title">
-										<span class="left-dot-word"><?= $block['first_component'] ?></span><?= $block['second_component'] ?>
-									</p>
-									<p class="box-underdonut__text"><?= $block['description'] ?></p>
-									<div class="box-price-count <?= 'idd' . $block['id'] ?>">
-										<p class="donut-price"><?= $block['price'] . ' руб' ?></p>
-										<div class="donut-count">
-											<div class="countform">
-												<button class="donut-count-button underdonut__button op50 <?= 'minus-btn ' . 'idd' . $block['id'] ?>">
-													<span class="minus-paint"></span>
-												</button>
-											</div>
-											<input class="undercount-var <?= 'idd' . $block['id'] ?>" value="0" readonly tabindex="-1">
-											<div class="countform">
-												<button class="donut-count-button underdonut__button <?= 'plus-btn ' . 'idd' . $block['id'] ?>">
-													<span class="minus-paint"></span><span class="plus-paint"></span>
-												</button>
+									<div class="box-underdonut-m">
+										<p class="box-underdonut__title">
+											<span class="left-dot-word"><?= $block['first_component'] ?></span><?= $block['second_component'] ?>
+										</p>
+										<p class="box-underdonut__text"><?= $block['description'] ?></p>
+										<div class="box-price-count <?= 'idd' . $block['id'] ?>">
+											<p class="donut-price"><?= $block['price'] . ' руб' ?></p>
+											<div class="donut-count">
+												<div class="countform">
+													<button class="donut-count-button underdonut__button op50 <?= 'minus-btn ' . 'idd' . $block['id'] ?>">
+														<span class="minus-paint"></span>
+													</button>
+												</div>
+												<input class="undercount-var <?= 'idd' . $block['id'] ?>" value="0" readonly tabindex="-1">
+												<div class="countform">
+													<button class="donut-count-button underdonut__button <?= 'plus-btn ' . 'idd' . $block['id'] ?>">
+														<span class="minus-paint"></span><span class="plus-paint"></span>
+													</button>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
 
 							<? } ?>
 
@@ -194,27 +195,27 @@ $donutCount = 0;
 							<p class="your-choise">Вы&nbsp;выбрали:</p>
 							<div class="choose-list">
 								<?
-											$donutBlocks = $pdo->query("SELECT * FROM donut_blocks");
-										?>
+								$donutBlocks = $pdo->query("SELECT * FROM donut_blocks");
+								?>
 								<? foreach ($donutBlocks as $block) { ?>
-								<div class="chooselist-element">
-									<p class="donut-name">
-										<span class="lil-left-dot-word"><?= $block['first_component'] ?></span><?= $block['second_component'] ?>
-									</p>
-									<div class="clist-element-count">
-										<div class="clist-countform">
-											<button class="donut-count-button clist-count-button op50 <?= 'minus-btn ' . 'idd' . $block['id'] ?>">
-												<span class="minus-paint"></span>
-											</button>
-										</div>
-										<input type="text" class="clist-count-var <?= 'idd' . $block['id'] ?>" name="<?= 'idd' . $block['id'] ?>" readonly value="0" tabindex="-1">
-										<div class="clist-countform">
-											<button class="donut-count-button clist-count-button <?= 'plus-btn ' . 'idd' . $block['id'] ?>">
-												<span class="minus-paint"></span><span class="plus-paint"></span>
-											</button>
+									<div class="chooselist-element">
+										<p class="donut-name">
+											<span class="lil-left-dot-word"><?= $block['first_component'] ?></span><?= $block['second_component'] ?>
+										</p>
+										<div class="clist-element-count">
+											<div class="clist-countform">
+												<button class="donut-count-button clist-count-button op50 <?= 'minus-btn ' . 'idd' . $block['id'] ?>">
+													<span class="minus-paint"></span>
+												</button>
+											</div>
+											<input type="text" class="clist-count-var <?= 'idd' . $block['id'] ?>" name="<?= 'idd' . $block['id'] ?>" readonly value="0" tabindex="-1">
+											<div class="clist-countform">
+												<button class="donut-count-button clist-count-button <?= 'plus-btn ' . 'idd' . $block['id'] ?>">
+													<span class="minus-paint"></span><span class="plus-paint"></span>
+												</button>
+											</div>
 										</div>
 									</div>
-								</div>
 
 								<? } ?>
 
@@ -464,8 +465,8 @@ $donutCount = 0;
 						<div class="rating-area">
 							<? for ($i = 5; $i > 0; $i--) { ?>
 
-							<input type="radio" id="<?= 'star-' . $i ?>" name="rating" value="<?= $i ?>">
-							<label for="<?= 'star-' . $i ?>" title=""></label>
+								<input type="radio" id="<?= 'star-' . $i ?>" name="rating" value="<?= $i ?>">
+								<label for="<?= 'star-' . $i ?>" title=""></label>
 
 							<? } ?>
 						</div>
@@ -476,25 +477,25 @@ $donutCount = 0;
 				</div>
 				<? foreach ($reviews as $review) { ?>
 
-				<div class="slider__item">
-					<div class="review">
-						<p class="review-head">
-							<? $reviewDate = date('d.m.Y', strtotime($review['date'])); ?>
-							<span class="reviewer-name"><?= $review['author'] ?></span>
-							<span class="review-date"><?= $reviewDate ?></span>
-						</p>
-						<p class="stars">
-							<? for ($i = 0; $i < $review['rating']; $i++) { ?>
+					<div class="slider__item">
+						<div class="review">
+							<p class="review-head">
+								<? $reviewDate = date('d.m.Y', strtotime($review['date'])); ?>
+								<span class="reviewer-name"><?= $review['author'] ?></span>
+								<span class="review-date"><?= $reviewDate ?></span>
+							</p>
+							<p class="stars">
+								<? for ($i = 0; $i < $review['rating']; $i++) { ?>
 
-							<span class="star"><img class="star__img" src="images/star.png" alt=""></span>
+									<span class="star"><img class="star__img" src="images/star.png" alt=""></span>
 
-							<? } ?>
-						</p>
-						<p class="review-text">
-							<?= $review['text'] ?>
-						</p>
+								<? } ?>
+							</p>
+							<p class="review-text">
+								<?= $review['text'] ?>
+							</p>
+						</div>
 					</div>
-				</div>
 
 				<? } ?>
 			</div>
